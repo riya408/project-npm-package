@@ -1,0 +1,20 @@
+
+import React from "react";
+import FavouriteCaseOne from "../../Components/Favourite Case One/FavouriteCaseOne";
+import FavouriteCaseTwo from "../../Components/Favourite Case Two/FavouriteCaseTwo";
+
+
+function Favourites() {
+  const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  return (
+    <div>
+      {storedFavorites.length === 0 ? (
+        <FavouriteCaseOne />
+      ) : (
+        <FavouriteCaseTwo />
+      )}
+    </div>
+  );
+}
+export default Favourites;
